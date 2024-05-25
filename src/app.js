@@ -17,7 +17,7 @@ app.delete("/api/v1/details/:id", (req, res) => {
     (entry) => entry.id === id
   );
   if(!userToDelete){
-    res.status(404).json({message: 'User not found!'});
+    res.status(404).json({message: 'User not found!', status: 'failed'});
     return;
   }
 
