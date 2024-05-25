@@ -17,7 +17,7 @@ app.delete("/api/v1/details/:id", (req, res) => {
     (entry) => entry.id === id
   );
   if(!userToDelete){
-    res.status(404).json({message: 'user does not exist'});
+    res.status(404).json({message: 'User not found!'});
     return;
   }
 
@@ -29,7 +29,7 @@ app.delete("/api/v1/details/:id", (req, res) => {
       status: "success",
       message: "User details deleted successfully",
       data: {
-        details: userToDelete
+        userDetails: userToDelete
       }
     })
   })
